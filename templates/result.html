@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Insurance Claim Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result">
+            {% if result %}
+                <p><strong>Original Input:</strong></p>
+                <ul>
+                    {% for variable, value in original_input.items() %}
+                        <li>{{ variable }}: {{ value }}</li>
+                    {% endfor %}
+                </ul>
+                <p class="prediction">Predicted Charges Claim: {{ result }}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
